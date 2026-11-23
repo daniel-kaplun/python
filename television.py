@@ -6,7 +6,7 @@ class Television:
     MAX_CHANNEL = 3
 
     def __init__(self) -> None:
-        """Initializes methods for the Television class"""
+        """Initializes the television with power off, unmuted, at minimum volume, and on the minimum channel."""
         self.__status = False
         self.__muted = False
         self.__volume = Television.MIN_VOLUME
@@ -53,5 +53,5 @@ class Television:
 
     def __str__(self) -> str:
         """Return the television's power, channel, and volume status"""
-        volume = 0 if self.__muted else self.__volume
+        volume = Television.MIN_VOLUME if self.__muted else self.__volume
         return f"Power = {self.__status}, Channel = {self.__channel}, Volume = {volume}"
